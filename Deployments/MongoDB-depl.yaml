@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongoDB
+  labels:
+    app: mongoDB-deployment
+spec:
+  selector:
+    matchLabels:
+      app: mongoDB-pod
+  replicas: 1 
+  template:
+    metadata:
+      labels:
+        app: mongoDB-pod
+    spec:
+      containers:
+        - name: mongoDB
+          image:  mongo
+          ports:
+          - containerPort:  27017
+          env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            value: 
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            value: 
