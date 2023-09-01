@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     app: mongo-express-pod
-  type: LoadBalancer
+  type: LoadBalancer 
   ports:
     - port: 8081
       targetPort: 8081
