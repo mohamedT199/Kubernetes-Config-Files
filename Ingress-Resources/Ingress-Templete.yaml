@@ -4,6 +4,16 @@ metadata:
   name: example-ingress
   namespace: kubernetes-example
 spec:
+#for customize error Pages for not found routing 
+  defaultBackend:
+    service:
+      name: kubernetes-example
+      port:
+        number: 80
+  tls:
+  - hosts: 
+    - exapmle.com
+    secretName: example-secret-tls
   rules:
   - host: exapmle.com
     http:
